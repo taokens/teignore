@@ -1,0 +1,16 @@
+{
+    "name": "taokens/teignore",
+    "description": "Solution of tenant data isolation.",
+    "authors": [
+        {
+            "name": "sishuo",
+            "email": "984276117@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Taokens\\Teignore\\": "src/"
+        }
+    }
+}
