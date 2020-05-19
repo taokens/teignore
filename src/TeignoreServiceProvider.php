@@ -4,7 +4,7 @@ namespace Taokens\Teignore;
 
 use Illuminate\Support\ServiceProvider;
 
-class TeignoreServiceProvider extends ServiceProvider
+class TenantServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -13,11 +13,19 @@ class TeignoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $appPath = __DIR__.'/TenantProcess.php';
-
         $this->publishes([
-            $appPath => app_path('Traits/TenantProcess.php'),
+            $this->appPath() => app_path('Traits/TenantProcess.php'),
         ]);
+    }
+
+    /**
+     * Add app path
+     *
+     * @return string
+     */
+    public function appPath()
+    {
+        return __DIR__.'/TenantProcess.php';
     }
 
     /**

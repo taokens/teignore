@@ -1,16 +1,28 @@
 {
     "name": "taokens/teignore",
+	"type": "library",
     "description": "Solution of tenant data isolation.",
+	"license": "MIT",
     "authors": [
         {
             "name": "sishuo",
-            "email": "984276117@qq.com"
+            "email": "984276117@qq.com",
+			"homepage":"https://github.com/taokens"
         }
     ],
-    "require": {},
+    "require": {
+		"php":">=7.0"
+	},
     "autoload": {
         "psr-4": {
             "Taokens\\Teignore\\": "src/"
+        }
+    },
+	"extra": {
+        "laravel": {
+            "providers": [
+                "Taokens\\Teignore\\TenantServiceProvider"
+            ]
         }
     }
 }

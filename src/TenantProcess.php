@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Traits;
+namespace Taokens\Teignore;
 
 
 trait TenantProcess
