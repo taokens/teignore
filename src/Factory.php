@@ -5,11 +5,13 @@ namespace Taokens\Teignore;
 
 use Taokens\Teignore\Api\Auth;
 use Taokens\Teignore\Api\BaseData;
+use Taokens\Teignore\Api\Department;
 
 /**
  * Class Factory
  * @property Auth auth
  * @property BaseData baseData
+ * @property Department department
  * @package Taokens\Teignore
  */
 class Factory
