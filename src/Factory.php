@@ -6,6 +6,7 @@ namespace Taokens\Teignore;
 use Taokens\Teignore\Api\Auth;
 use Taokens\Teignore\Api\BaseData;
 use Taokens\Teignore\Api\Department;
+use Taokens\Teignore\Api\TenantUserInfo;
 use Taokens\Teignore\Api\UserInfo;
 
 /**
@@ -14,6 +15,7 @@ use Taokens\Teignore\Api\UserInfo;
  * @property BaseData baseData
  * @property Department department
  * @property UserInfo userInfo
+ * @property TenantUserInfo tenantUserInfo
  * @package Taokens\Teignore
  */
 class Factory
