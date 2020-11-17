@@ -39,6 +39,44 @@ class Curl
      */
     public static function curl_post($url, $post_data, $header = [])
     {
+        if (!extension_loaded('swoole')) {
+            $output = self::fpm_curl_post($url, $post_data, $header);
+        } else {
+            if (PHP_SAPI == 'cli') {
+                $urlsInfo = \parse_url($url);
+                $queryUrl = $urlsInfo['path'];
+                if (isset($urlsInfo['query'])) {
+                    $queryUrl .= '?' . $urlsInfo['query'];
+                }
+                $domain = $urlsInfo['host'];
+                if (isset($urlsInfo['port'])) {
+                    $port = $urlsInfo['port'];
+                } else {
+                    $port = ($urlsInfo['scheme'] == 'https' ? 443 : 80);
+                }
+                $isSsl = $urlsInfo['scheme'] == 'https' ? true : false;
+                $cli = new \Swoole\Coroutine\Http\Client($domain, $port, $isSsl);
+                $cli->setHeaders($header);
+                $cli->set(['timeout' => 15]);
+                $cli->post($queryUrl, $post_data);
+                $output = $cli->body;
+                $cli->close();
+            } else {
+                $output = self::fpm_curl_post($url, $post_data, $header);
+            }
+        }
+        return $output;
+    }
+
+    /**
+     * fpm-发送post
+     * @param $url
+     * @param $post_data
+     * @param array $header
+     * @return bool|string
+     */
+    public static function fpm_curl_post($url, $post_data, $header = [])
+    {
         $ch = \curl_init();
         \curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         // https请求 不验证证书和hosts
