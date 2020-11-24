@@ -14,8 +14,9 @@ class TenantGateWay
      */
     protected $appKey;
     protected $appSecret;
-    protected $url;
     protected $randStr;
+    protected $baseUrl;
+    protected $url;
 
     const ENCRYPTION_TYPE = 'md5';
 
@@ -23,7 +24,7 @@ class TenantGateWay
     {
         $this->appKey = $config['appKey'];
         $this->appSecret = $config['appSecret'];
-        $this->url = $config['baseUrl'] . static::QUERY_URL;
+        $this->baseUrl = rtrim($config['baseUrl'],'/');
     }
 
     /**
@@ -82,12 +83,24 @@ class TenantGateWay
     }
 
     /**
+     * 请求URL拼接
+     * @param string $queryUrl
+     * @return TenantGateWay
+     */
+    protected function setUrl($queryUrl = '')
+    {
+        $this->url = $this->baseUrl . $queryUrl;
+        return $this;
+    }
+
+    /**
      * 发送请求
      * @param $params
      * @return bool|string
      */
     protected function send($params)
     {
+        /** @var $result */
         $result = Curl::curl_post($this->url, $params ,$this->setParameter());
         return $result;
     }

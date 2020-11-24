@@ -8,10 +8,6 @@ use Taokens\Teignore\TenantGateWay;
 
 class UserInfo extends TenantGateWay
 {
-    /**
-     * 具体业务请求URL
-     */
-    const QUERY_URL = '/api/open-api/user-center/user-info';
 
     /**
      * SaaS获取用户信息
@@ -20,6 +16,6 @@ class UserInfo extends TenantGateWay
      */
     public function getUserInfo(array $params = [])
     {
-        return $this->send($params);
+        return $this->setUrl(\Golive::USER_GET_DETAIL)->send($params);
     }
 }

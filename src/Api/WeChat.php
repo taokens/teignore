@@ -8,10 +8,6 @@ use Taokens\Teignore\TenantGateWay;
 
 class WeChat extends TenantGateWay
 {
-    /**
-     * 具体业务请求URL
-     */
-    const QUERY_URL = '/api/open-api/wechat/js/sdk';
 
     /**
      * SaaS获取租户下微信 access_token
@@ -22,12 +18,7 @@ class WeChat extends TenantGateWay
      */
     public function getToken(array $params = [])
     {
-        if (!isset($params['baseUrl'])) {
-            throw new Exception("传入参数必须 携带所请求平台的基础域名");
-        }
-        $params['url'] = rtrim($params['baseUrl'], '/') . '/api/open-api/wechat/token';
-        unset($params['baseUrl']);
-        return $this->send($params);
+        return $this->setUrl(\Golive::WECHAT_TOKEN)->send($params);
     }
 
     /**
@@ -38,6 +29,6 @@ class WeChat extends TenantGateWay
      */
     public function getJsSDK(array $params = [])
     {
-        return $this->send($params);
+        return $this->setUrl(\Golive::WECHAT_JSSDK)->send($params);
     }
 }

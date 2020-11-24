@@ -8,10 +8,6 @@ use Taokens\Teignore\TenantGateWay;
 
 class Department extends TenantGateWay
 {
-    /**
-     * 具体业务请求URL
-     */
-    const QUERY_URL = '/api/open-api/department/get-data';
 
     /**
      * SaaS获取组织架构
@@ -20,6 +16,6 @@ class Department extends TenantGateWay
      */
     public function get(array $params = [])
     {
-        return $this->send($params);
+        return $this->setUrl(\Golive::PRODUCT_GET_DEPARTMENT)->send($params);
     }
 }

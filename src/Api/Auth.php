@@ -8,10 +8,6 @@ use Taokens\Teignore\TenantGateWay;
 
 class Auth extends TenantGateWay
 {
-    /**
-     * 具体业务请求URL
-     */
-    const QUERY_URL = '/api/open-api/product/get-tenant';
 
     /**
      * SaaS身份认证
@@ -20,6 +16,6 @@ class Auth extends TenantGateWay
      */
     public function auth(array $params = [])
     {
-        return $this->send($params);
+        return $this->setUrl(\Golive::PRODUCT_GET_TENANT_INFO)->send($params);
     }
 }
