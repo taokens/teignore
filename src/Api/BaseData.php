@@ -3,7 +3,7 @@
 
 namespace Taokens\Teignore\Api;
 
-
+use Taokens\Teignore\Tools\Golive;
 use Taokens\Teignore\TenantGateWay;
 
 class BaseData extends TenantGateWay
@@ -16,6 +16,6 @@ class BaseData extends TenantGateWay
      */
     public function query(array $params = [])
     {
-        return $this->setUrl(\Golive::PRODUCT_GET_BASE_DATA)->send($params);
+        return $this->setUrl(Golive::PRODUCT_GET_BASE_DATA)->send($params);
     }
 }

@@ -3,6 +3,7 @@
 
 namespace Taokens\Teignore\Api;
 
+use Taokens\Teignore\Tools\Golive;
 use Exception;
 use Taokens\Teignore\TenantGateWay;
 
@@ -18,7 +19,7 @@ class WeChat extends TenantGateWay
      */
     public function getToken(array $params = [])
     {
-        return $this->setUrl(\Golive::WECHAT_TOKEN)->send($params);
+        return $this->setUrl(Golive::WECHAT_TOKEN)->send($params);
     }
 
     /**
@@ -29,6 +30,6 @@ class WeChat extends TenantGateWay
      */
     public function getJsSDK(array $params = [])
     {
-        return $this->setUrl(\Golive::WECHAT_JSSDK)->send($params);
+        return $this->setUrl(Golive::WECHAT_JSSDK)->send($params);
     }
 }

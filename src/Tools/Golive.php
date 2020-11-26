@@ -1,4 +1,5 @@
 <?php
+namespace Taokens\Teignore\Tools;
 
 class Golive
 {

@@ -3,7 +3,7 @@
 
 namespace Taokens\Teignore\Api;
 
-
+use Taokens\Teignore\Tools\Golive;
 use Taokens\Teignore\TenantGateWay;
 
 class Department extends TenantGateWay
@@ -16,6 +16,6 @@ class Department extends TenantGateWay
      */
     public function get(array $params = [])
     {
-        return $this->setUrl(\Golive::PRODUCT_GET_DEPARTMENT)->send($params);
+        return $this->setUrl(Golive::PRODUCT_GET_DEPARTMENT)->send($params);
     }
 }

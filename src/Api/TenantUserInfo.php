@@ -3,7 +3,7 @@
 
 namespace Taokens\Teignore\Api;
 
-
+use Taokens\Teignore\Tools\Golive;
 use Taokens\Teignore\TenantGateWay;
 
 class TenantUserInfo extends TenantGateWay
@@ -16,6 +16,6 @@ class TenantUserInfo extends TenantGateWay
      */
     public function get(array $params = [])
     {
-        return $this->setUrl(\Golive::USER_TENANT_USER_LIST)->send($params);
+        return $this->setUrl(Golive::USER_TENANT_USER_LIST)->send($params);
     }
 }
