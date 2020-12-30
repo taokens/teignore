@@ -72,13 +72,23 @@ class TenantGateWay
     protected function setParameter()
     {
         $this->getRandStr();
-        $header =  [
-            'appKey:'    . $this->appKey,
-            'timestamp:' . $this->getTimestamp(),
-            'randStr:'   . $this->randStr,
-            'sign:'      . $this->getToSign(),
-            'encryptionType:' . self::ENCRYPTION_TYPE
-        ];
+        if (PHP_SAPI == 'cli') {
+            $header =  [
+                'appKey'    => $this->appKey,
+                'timestamp' => $this->getTimestamp(),
+                'randStr'   => $this->randStr,
+                'sign'      => $this->getToSign(),
+                'encryptionType' => self::ENCRYPTION_TYPE
+            ];
+        }else{
+            $header =  [
+                'appKey:'    . $this->appKey,
+                'timestamp:' . $this->getTimestamp(),
+                'randStr:'   . $this->randStr,
+                'sign:'      . $this->getToSign(),
+                'encryptionType:' . self::ENCRYPTION_TYPE
+            ];
+        }
         return $header;
     }
 
