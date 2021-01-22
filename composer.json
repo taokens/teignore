@@ -17,12 +17,5 @@
         "psr-4": {
             "Taokens\\Teignore\\": "src/"
         }
-    },
-	"extra": {
-        "laravel": {
-            "providers": [
-                "Taokens\\Teignore\\TenantServiceProvider"
-            ]
-        }
     }
 }
