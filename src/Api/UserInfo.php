@@ -28,4 +28,14 @@ class UserInfo extends TenantGateWay
     {
         return $this->setUrl(Golive::DING_USER_GET_DETAIL)->send($params);
     }
+
+    /**
+     * 根据手机号获取用户信息接口
+     * @param array $params
+     * @return bool|string
+     */
+    public function getUserPhoneInfo(array $params = [])
+    {
+        return $this->setUrl(Golive::USER_GET_PHONE_DETAIL)->send($params);
+    }
 }
