@@ -38,4 +38,14 @@ class UserInfo extends TenantGateWay
     {
         return $this->setUrl(Golive::USER_GET_PHONE_DETAIL)->send($params);
     }
+
+    /**
+     * 用户人脸信息获取接口
+     * @param array $params
+     * @return bool|string
+     */
+    public function getUserFaceInfo(array $params = [])
+    {
+        return $this->setUrl(Golive::USER_FACE_GET)->send($params);
+    }
 }
