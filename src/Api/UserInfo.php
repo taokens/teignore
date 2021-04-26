@@ -48,4 +48,14 @@ class UserInfo extends TenantGateWay
     {
         return $this->setUrl(Golive::USER_FACE_GET)->send($params);
     }
+
+    /**
+     * 获取用户组织架构
+     * @param array $params
+     * @return bool|string
+     */
+    public function getUserDepInfo(array $params = [])
+    {
+        return $this->setUrl(Golive::USER_DEP_GET)->send($params);
+    }
 }
