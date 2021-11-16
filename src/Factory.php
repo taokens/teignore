@@ -7,6 +7,8 @@ use Taokens\Teignore\Api\Auth;
 use Taokens\Teignore\Api\AuthUserInfo;
 use Taokens\Teignore\Api\BaseData;
 use Taokens\Teignore\Api\Department;
+use Taokens\Teignore\Api\Download;
+use Taokens\Teignore\Api\Product;
 use Taokens\Teignore\Api\TenantUserInfo;
 use Taokens\Teignore\Api\UserInfo;
 
@@ -18,6 +20,8 @@ use Taokens\Teignore\Api\UserInfo;
  * @property UserInfo userInfo
  * @property TenantUserInfo tenantUserInfo
  * @property AuthUserInfo authUserInfo
+ * @property Product product
+ * @property Download download
  * @package Taokens\Teignore
  */
 class Factory

@@ -17,4 +17,10 @@ class Golive
 
     const WECHAT_TOKEN = '/api/open-api/wechat/token'; // 获取微信token
     const WECHAT_JSSDK = '/api/open-api/wechat/js/sdk'; // 获取微信jsSdk
+
+    const DATA_PERMISSION = '/api/open-api/product/data/permission'; // 根据租户账户-获取数据权限
+
+    const DC_CREATE = '/api/open-api/dc/create'; // 创建下载任务
+    const DC_PROGRESS = '/api/open-api/dc/progress'; // 更新下载任务进度
+    const DC_CLOSE = '/api/open-api/dc/close'; // 下载结果通知
 }
