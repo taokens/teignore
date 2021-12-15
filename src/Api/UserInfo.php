@@ -20,6 +20,16 @@ class UserInfo extends TenantGateWay
     }
 
     /**
+     * Token换取user_code
+     * @param array $params
+     * @return bool|string
+     */
+    public function tokenToUserCode(array $params = [])
+    {
+        return $this->setUrl(Golive::USER_TOKEN_TO_CODE)->send($params);
+    }
+
+    /**
      * SaaS获取钉钉用户信息
      * @param array $params
      * @return bool|string
