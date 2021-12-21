@@ -8,6 +8,7 @@ class Golive
     const PRODUCT_GET_DEPARTMENT = '/api/open-api/department/get-data'; // 获取租户组织架构
 
     const USER_GET_DETAIL = '/api/open-api/user-center/user-info'; // 用户信息获取接口
+    const USER_GET_IDENTITY = '/api/open-api/product/get-identity'; // 获取身份信息
     const USER_TOKEN_TO_CODE = '/api/open-api/user-center/user-code-by-token'; // Token换取user_code
     const USER_FACE_GET = '/api/open-api/user-center/user-face/info'; // 用户人脸信息获取接口
     const USER_DEP_GET = '/api/open-api/department/get-data-by-user'; // 获取用户组织架构
