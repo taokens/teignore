@@ -25,4 +25,6 @@ class Golive
     const DC_CREATE = '/api/open-api/dc/create'; // 创建下载任务
     const DC_PROGRESS = '/api/open-api/dc/progress'; // 更新下载任务进度
     const DC_CLOSE = '/api/open-api/dc/close'; // 下载结果通知
+
+    const DING_TALK = '/api/open-api/ding-talk/code-info'; // 钉工牌付款码解析
 }
