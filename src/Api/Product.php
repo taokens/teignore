@@ -28,4 +28,14 @@ class Product extends TenantGateWay
     {
         return $this->setUrl(Golive::USER_GET_IDENTITY)->send($params);
     }
+
+    /**
+     * 获取所有租户Code与租户Code对应的名称
+     * @param array $params
+     * @return bool|string
+     */
+    public function getAllTenant(array $params = [])
+    {
+        return $this->setUrl(Golive::PRODUCT_GET_ALL_TENANT)->send($params);
+    }
 }

@@ -6,6 +6,7 @@ class Golive
     const PRODUCT_GET_TENANT_INFO = '/api/open-api/product/get-tenant'; // 验证 JWT Token 、获取租户信息及菜单权限列表
     const PRODUCT_GET_BASE_DATA = '/api/open-api/product/base-data/get'; // 获取基础数据
     const PRODUCT_GET_DEPARTMENT = '/api/open-api/department/get-data'; // 获取租户组织架构
+    const PRODUCT_GET_ALL_TENANT = '/api/open-api/data-platform/get-all-tenant'; // 获取所有租户Code与租户Code对应的名称
 
     const USER_GET_DETAIL = '/api/open-api/user-center/user-info'; // 用户信息获取接口
     const USER_GET_IDENTITY = '/api/open-api/product/get-identity'; // 获取身份信息
