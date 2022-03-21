@@ -38,4 +38,14 @@ class Product extends TenantGateWay
     {
         return $this->setUrl(Golive::PRODUCT_GET_ALL_TENANT)->send($params);
     }
+
+    /**
+     * 获取租户产品是否需要身份认证
+     * @param array $params
+     * @return bool|string
+     */
+    public function getProductAuth(array $params = [])
+    {
+        return $this->setUrl(Golive::PRODUCT_GET_PRODUCT_AUTH)->send($params);
+    }
 }
