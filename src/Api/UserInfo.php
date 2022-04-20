@@ -68,4 +68,14 @@ class UserInfo extends TenantGateWay
     {
         return $this->setUrl(Golive::USER_DEP_GET)->send($params);
     }
+
+    /**
+     * 根据一码通码值获取用户信息
+     * @param array $params
+     * @return bool|string
+     */
+    public function getUserByVirtualCode(array $params = [])
+    {
+        return $this->setUrl(Golive::VIRTUAL_CODE)->send($params);
+    }
 }

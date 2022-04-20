@@ -9,6 +9,7 @@ class Golive
     const PRODUCT_GET_ALL_TENANT = '/api/open-api/data-platform/get-all-tenant'; // 获取所有租户Code与租户Code对应的名称
     const PRODUCT_GET_PRODUCT_AUTH = '/api/open-api/product/get-product-auth'; //获取租户产品是否需要身份认证
 
+    const VIRTUAL_CODE = '/api/open-api/user-center/code/user-info'; // 根据一码通码值获取用户信息
     const USER_GET_DETAIL = '/api/open-api/user-center/user-info'; // 用户信息获取接口
     const USER_GET_IDENTITY = '/api/open-api/product/get-identity'; // 获取身份信息
     const USER_TOKEN_TO_CODE = '/api/open-api/user-center/user-code-by-token'; // Token换取user_code
