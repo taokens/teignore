@@ -78,4 +78,14 @@ class UserInfo extends TenantGateWay
     {
         return $this->setUrl(Golive::VIRTUAL_CODE)->send($params);
     }
+
+    /**
+     * 根据第三方传入数据生成用户
+     * @param array $params
+     * @return bool|string
+     */
+    public function generateUser(array $params = [])
+    {
+        return $this->setUrl(Golive::USER_GENERATE)->send($params);
+    }
 }
