@@ -20,6 +20,7 @@ class Golive
     const USER_TENANT_AUTH_LIST = '/api/open-api/user-center/tenant/auth-user-info'; // 获取租户下人员信息（信息中心数据）
     const USER_TENANT_USER_LIST = '/api/open-api/user-center/tenant/user-info'; // 获取租户下的用户信息
     const USER_GENERATE = '/api/open-api/user-center/user-generate'; // 根据第三方传入数据生成用户
+    const USER_FACE_AUTH = '/api/open-api/user-center/user-face-auth'; // 人脸上传分析返回压缩后的图片URL
 
     const WECHAT_TOKEN = '/api/open-api/wechat/token'; // 获取微信token
     const WECHAT_JSSDK = '/api/open-api/wechat/js/sdk'; // 获取微信jsSdk

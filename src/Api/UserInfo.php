@@ -88,4 +88,14 @@ class UserInfo extends TenantGateWay
     {
         return $this->setUrl(Golive::USER_GENERATE)->send($params);
     }
+
+    /**
+     * 人脸上传分析返回压缩后的图片URL
+     * @param array $params
+     * @return bool|string
+     */
+    public function uploadUserFaceAuth(array $params = [])
+    {
+        return $this->setUrl(Golive::USER_FACE_AUTH)->send($params);
+    }
 }
