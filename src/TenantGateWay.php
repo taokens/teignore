@@ -111,6 +111,18 @@ class TenantGateWay
     protected function send($params)
     {
         /** @var $result */
+        $result = Curl::curl_post($this->url, $params ,$this->setParameter());
+        return $result;
+    }
+
+    /**
+     * 发送请求
+     * @param $params
+     * @return bool|string
+     */
+    protected function sendFile($params)
+    {
+        /** @var $result */
         $result = Curl::curl_post($this->url, $params ,$this->setParameter(), true);
         return $result;
     }

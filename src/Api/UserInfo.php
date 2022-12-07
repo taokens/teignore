@@ -96,6 +96,6 @@ class UserInfo extends TenantGateWay
      */
     public function uploadUserFaceAuth(array $params = [])
     {
-        return $this->setUrl(Golive::USER_FACE_AUTH)->send($params);
+        return $this->setUrl(Golive::USER_FACE_AUTH)->sendFile($params);
     }
 }
