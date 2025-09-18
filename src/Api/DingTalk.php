@@ -7,6 +7,18 @@ use Taokens\Teignore\Tools\Golive;
 
 class DingTalk extends TenantGateWay
 {
+
+    /**
+     * 获取钉钉token
+     *
+     * @param array $params
+     * @return bool|string
+     */
+    public function getToken(array $params = [])
+    {
+        return $this->setUrl(Golive::DING_TOKEN)->send($params);
+    }
+
     /**
      * 钉工牌付款码解析
      *

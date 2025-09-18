@@ -32,4 +32,5 @@ class Golive
     const DC_CLOSE = '/api/open-api/dc/close'; // 下载结果通知
 
     const DING_TALK = '/api/open-api/ding-talk/code-info'; // 钉工牌付款码解析
+    const DING_TOKEN = '/api/open-api/ding-talk/token'; // 获取钉钉token
 }
